@@ -1,0 +1,142 @@
+@import url('gold.css');
+@import url('https://fonts.googleapis.com/css2?family=Metal&family=Metal+Mania&family=Potta+One&display=swap');
+
+:root {
+    --text: #e0e8f1;
+    --primary: #811313;
+    --secondary: #4641d8;
+    --tertiary: #6f6bd6;
+    --button: #6f6bd6;
+    --button-hover: #ebaa1d;
+}
+
+html {
+    --m: 1.5rem;
+    font-size: var(--m);
+    font-family: "Metal", sans-serif;
+    color: var(--text);
+    background: black;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+main {
+    height: 100svh;
+    display: grid;
+    grid-template: 
+    ". . a" auto
+    ". . ." 1fr
+    "b . ." auto
+    ;
+    padding: var(--xxs);
+    overflow: hidden;
+}
+
+#top {
+    grid-area: a;
+    text-align: end;
+    font-family: "Metal Mania";
+    mix-blend-mode: color-dodge;
+    text-box: trim-both ex alphabetic;
+}
+
+#bot {
+    grid-area: b;
+    display: grid;
+    grid-template-rows: auto;
+    border-radius: var(--m);
+    width: fit-content;
+    backdrop-filter: brightness(0.38);
+    div {
+        width: fit-content;
+    }
+}
+
+#trigger {
+    background: none;
+    border-radius: var(--m);
+    padding-inline: var(--xs);
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    &[initial] {
+        text-decoration: none;
+        background: var(--button);
+        animation: flicker 3.3s ease-in infinite;
+    }
+    &:hover {
+        background-color: var(--button-hover);
+    }
+}
+
+@keyframes flicker {
+    50% {
+        opacity: 0;
+    }
+}
+
+#player {
+    display: flex;
+    align-items: center;
+    gap: var(--xxs);
+    height: var(--m);
+    padding-right: var(--xs);
+    p {
+        text-box-trim: trim-start
+    }
+}
+
+button:not(#trigger) {
+    aspect-ratio: 1/1;
+    height: 62%;
+    background-size: contain;
+    background-color: var(--button);
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--button-hover);
+    }
+    &#vol-down {
+        background-image: url("../svg/volume-min.svg");
+    }
+    &#vol-up {
+        background-image: url("../svg/volume-max.svg");
+    }
+}
+
+.accent {
+    color: var(--secondary);
+}
+
+a {
+    color: var(--tertiary);
+}
+
+#cover {
+    img {
+        aspect-ratio: 1/1;
+        border-radius: var(--s);
+        width: var(--xl);
+        filter: drop-shadow(2px 2px 2px black);
+        cursor: pointer;
+    }
+}
+
+#title {
+    font-family: "Potta One";
+}

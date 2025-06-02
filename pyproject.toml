@@ -1,0 +1,11 @@
+[project]
+name = "datastar-nura"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "quart>=0.20.0",
+    "redis>=6.1.0",
+    "tinydb>=4.8.2",
+]

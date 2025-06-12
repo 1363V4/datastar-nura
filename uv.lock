@@ -46,14 +46,12 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "quart" },
-    { name = "redis" },
     { name = "tinydb" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "quart", specifier = ">=0.20.0" },
-    { name = "redis", specifier = ">=6.1.0" },
     { name = "tinydb", specifier = ">=4.8.2" },
 ]
 
@@ -215,15 +213,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/1d/9d/12e1143a5bd2ccc05c293a6f5ae1df8fd94a8fc1440ecc6c344b2b30ce13/quart-0.20.0.tar.gz", hash = "sha256:08793c206ff832483586f5ae47018c7e40bdd75d886fee3fabbdaa70c2cf505d", size = 63874 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7e/e9/cc28f21f52913adf333f653b9e0a3bf9cb223f5083a26422968ba73edd8d/quart-0.20.0-py3-none-any.whl", hash = "sha256:003c08f551746710acb757de49d9b768986fd431517d0eb127380b656b98b8f1", size = 77960 },
-]
-
-[[package]]
-name = "redis"
-version = "6.1.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a6/af/e875d57383653e5d9065df8552de1deb7576b4d3cf3af90cde2e79ff7f65/redis-6.1.0.tar.gz", hash = "sha256:c928e267ad69d3069af28a9823a07726edf72c7e37764f43dc0123f37928c075", size = 4629300 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/28/5f/cf36360f80ae233bd1836442f5127818cfcfc7b1846179b60b2e9a4c45c9/redis-6.1.0-py3-none-any.whl", hash = "sha256:3b72622f3d3a89df2a6041e82acd896b0e67d9f54e9bcd906d091d23ba5219f6", size = 273750 },
 ]
 
 [[package]]

@@ -7,7 +7,7 @@ from tinydb import TinyDB
 
 import time
 import asyncio
-from random import choice
+from random import choices
 
 
 # CONFIG
@@ -17,10 +17,8 @@ app.secret_key = 'a_secret_key'
 
 db = TinyDB("data.json", sort_keys=True, indent=4)
 gif_table = db.table('gifs')
-mp3_table = db.table('mp3')
+mp3_table = db.table('mp3s')
 current_table = db.table('current')
-
-# redis_client = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
 
 # UTILS
 
@@ -46,12 +44,10 @@ data-on-interval="$rem--; if (Date.now() > {next_start} * 1000) {{ @get('/main')
 >
     <audio 
     data-ref="audio" 
-    src="../static/mp3/{mp3}.opus#t={mp3_delay}" 
+    src="../static/mp3/{mp3}.mp3#t={mp3_delay}" 
     data-on-signal-change="el.volume = $vol / 10" 
     loop></audio>
-    <video id="bg-video" autoplay muted loop playsinline>
-        <source src="../static/gif/{gif}#t={gif_delay}" type="video/mp4">
-    </video>
+    <video id="bg-video" autoplay muted loop playsinline src="../static/gif/{gif}#t={gif_delay}" type="video/mp4"></video>
     <div id="top" class="gt l">
         <p>nurad.io</p>
     </div>
@@ -96,31 +92,40 @@ data-on-interval="$rem--; if (Date.now() > {next_start} * 1000) {{ @get('/main')
 @app.before_serving
 async def startup():
     asyncio.create_task(radio_station())
-    # asyncio.create_task(gif_station())
+    asyncio.create_task(gif_station())
 
 async def radio_station():
     while True:
         songs = mp3_table.all()
-        song = choice(songs)
-        gifs = gif_table.all()
-        gif = choice(gifs)
+        print(songs)
+        weights = [song.get('played') for song in songs]
+        print(weights)
+        max_weight = max(weights) + 1
+        weights = [max_weight - weight for weight in weights]
+        song = choices(songs, weights)[0]
         current_table.update({
             'mp3': song['name'],
             'mp3_alias': song['alias'],
             'mp3_length': song['length'],
             'mp3_start': time.time(),
+        }, doc_ids=[1])
+        mp3_table.update({'played': song['played'] + 1}, doc_ids=[song.doc_id])
+        await asyncio.sleep(song['length'])
+
+async def gif_station():
+    while True:
+        gifs = gif_table.all()
+        weights = [gif.get('played') for gif in gifs]
+        max_weight = max(weights) + 1
+        weights = [max_weight - weight for weight in weights]
+        gif = choices(gifs, weights)[0]
+        current_table.update({
             'gif': gif['name'],
             'gif_start': time.time()
         }, doc_ids=[1])
-        # await redis_client.publish('nura', 'new nura just dropped')
-        await asyncio.sleep(song['length'])
-        # await asyncio.sleep(10)
-
-# async def gif_station():
-#     while True:
-#         await redis_client.publish('nura', 'new nura just dropped')
-#         print("changed gif")
-#         await asyncio.sleep(3)
+        gif_table.update({'played': gif['played'] + 1}, doc_ids=[gif.doc_id])
+        print(gif)
+        await asyncio.sleep(3)
 
 # ROUTES
 
@@ -128,8 +133,6 @@ async def radio_station():
 async def before_request():
     if not session.get('playing'): 
         session['playing'] = 0
-    # if not session.get('last_update'): 
-    #     session['last_update'] = 0
 
 @app.get('/')
 async def index():
@@ -145,20 +148,6 @@ async def main():
         yield SSE.execute_script(script="document.querySelector('video').load()")
         if session['playing']:
             yield SSE.execute_script(script="document.querySelector('audio').play()")
-        # current = current_table.get(doc_id=1)
-        # html = await main_view(current)
-        # yield SSE.merge_fragments(fragments=[html])
-        # while True:
-        #     try:
-        #         current = current_table.get(doc_id=1)
-        #         if current['mp3_start'] > session['last_update']:
-        #             session['last_update'] = current['mp3_start']
-        #             html = await main_view(current)
-        #             yield SSE.merge_fragments(fragments=[html])
-        #             yield SSE.execute_script(script="document.querySelector('audio').play(); document.querySelector('video').load();")
-        #         await asyncio.sleep(1)
-        #     except asyncio.CancelledError:
-        #         break
     return await make_datastar_response(event())
 
 @app.post('/play')

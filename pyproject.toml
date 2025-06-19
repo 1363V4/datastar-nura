@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "datastar-py>=0.5.0",
+    "dotenv>=0.9.9",
     "quart>=0.20.0",
     "tinydb>=4.8.2",
 ]

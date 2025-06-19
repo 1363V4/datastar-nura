@@ -10,7 +10,8 @@ wheels/
 .venv
 
 # Other
-/static/gif
-/static/mp3
-/static/img
-data.json
+# /static/gif
+# /static/mp3
+# /static/img
+# data.json
+.env

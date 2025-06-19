@@ -1,12 +1,12 @@
 {
     "current": {
         "1": {
-            "gif": "segment_021.mp4",
-            "gif_start": 1750227491.149173,
-            "mp3": "wait",
-            "mp3_alias": "\u5b89\u30ab\u56e0",
-            "mp3_length": 138,
-            "mp3_start": 1750227491.1324453
+            "gif": "segment_013.mp4",
+            "gif_start": 1750340931.8870082,
+            "mp3": "again",
+            "mp3_alias": "\u30a4\u5370\u30ab",
+            "mp3_length": 194,
+            "mp3_start": 1750340931.8830945
         }
     },
     "gifs": {
@@ -24,11 +24,11 @@
         },
         "12": {
             "name": "segment_012.mp4",
-            "played": 9
+            "played": 10
         },
         "13": {
             "name": "segment_013.mp4",
-            "played": 8
+            "played": 9
         },
         "14": {
             "name": "segment_014.mp4",
@@ -52,7 +52,7 @@
         },
         "19": {
             "name": "segment_019.mp4",
-            "played": 6
+            "played": 7
         },
         "2": {
             "name": "segment_002.mp4",
@@ -76,7 +76,7 @@
         },
         "4": {
             "name": "segment_004.mp4",
-            "played": 3
+            "played": 4
         },
         "5": {
             "name": "segment_005.mp4",
@@ -104,7 +104,7 @@
             "alias": "\u30a4\u5370\u30ab",
             "length": 194,
             "name": "again",
-            "played": 20
+            "played": 21
         },
         "10": {
             "alias": "\u308a\u30cf\u5869",
@@ -134,7 +134,7 @@
             "alias": "\u30bb\u3051\u6697",
             "length": 130,
             "name": "hard-vip",
-            "played": 1
+            "played": 2
         },
         "15": {
             "alias": "\u7e01\u3066\u30ac",
@@ -266,7 +266,7 @@
             "alias": "\u6765\u8fce\u6b7b",
             "length": 169,
             "name": "raigo",
-            "played": 2
+            "played": 3
         },
         "35": {
             "alias": "\u30eb\u5b9b\u76ca",
@@ -386,7 +386,7 @@
             "alias": "\u4ee5\u30fc\u3076",
             "length": 135,
             "name": "war",
-            "played": 4
+            "played": 5
         },
         "53": {
             "alias": "\u30e2\u6e29\u307e",

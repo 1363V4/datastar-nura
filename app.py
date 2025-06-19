@@ -140,10 +140,10 @@ async def main():
     async def event():
         current = current_table.get(doc_id=1)
         html = await main_view(current)
-        yield SSE.merge_fragments(fragments=[html])
-        yield SSE.execute_script(script="document.querySelector('video').load()")
+        yield SSE.merge_fragments(html)
+        yield SSE.execute_script("document.querySelector('video').load()")
         if session['playing']:
-            yield SSE.execute_script(script="document.querySelector('audio').play()")
+            yield SSE.execute_script("document.querySelector('audio').play()")
             yield SSE.merge_signals({'play': 1})
     return DatastarResponse(event())
 

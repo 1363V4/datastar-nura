@@ -15,3 +15,4 @@ wheels/
 # /static/img
 # data.json
 .env
+*.log

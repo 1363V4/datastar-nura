@@ -1,22 +1,22 @@
 {
     "current": {
         "1": {
-            "gif": "segment_009.mp4",
-            "gif_start": 1750764050.532074,
-            "mp3": "move",
-            "mp3_alias": "\u62bc\u8863\u65fa",
-            "mp3_length": 237,
-            "mp3_start": 1750764050.5264316
+            "gif": "segment_015.mp4",
+            "gif_start": 1750769671.8702884,
+            "mp3": "west-vip",
+            "mp3_alias": "\u30e2\u6e29\u307e",
+            "mp3_length": 194,
+            "mp3_start": 1750769671.8615184
         }
     },
     "gifs": {
         "1": {
             "name": "segment_001.mp4",
-            "played": 117
+            "played": 121
         },
         "10": {
             "name": "segment_010.mp4",
-            "played": 120
+            "played": 122
         },
         "11": {
             "name": "segment_011.mp4",
@@ -24,67 +24,67 @@
         },
         "12": {
             "name": "segment_012.mp4",
-            "played": 117
+            "played": 119
         },
         "13": {
             "name": "segment_013.mp4",
-            "played": 120
+            "played": 121
         },
         "14": {
             "name": "segment_014.mp4",
-            "played": 121
+            "played": 122
         },
         "15": {
             "name": "segment_015.mp4",
-            "played": 118
+            "played": 120
         },
         "16": {
             "name": "segment_016.mp4",
-            "played": 120
+            "played": 121
         },
         "17": {
             "name": "segment_017.mp4",
-            "played": 119
+            "played": 120
         },
         "18": {
             "name": "segment_018.mp4",
-            "played": 118
+            "played": 119
         },
         "19": {
             "name": "segment_019.mp4",
-            "played": 120
+            "played": 122
         },
         "2": {
             "name": "segment_002.mp4",
-            "played": 119
+            "played": 120
         },
         "20": {
             "name": "segment_020.mp4",
-            "played": 121
+            "played": 122
         },
         "21": {
             "name": "segment_021.mp4",
-            "played": 119
+            "played": 120
         },
         "22": {
             "name": "segment_022.mp4",
-            "played": 120
+            "played": 122
         },
         "3": {
             "name": "segment_003.mp4",
-            "played": 119
+            "played": 120
         },
         "4": {
             "name": "segment_004.mp4",
-            "played": 119
+            "played": 120
         },
         "5": {
             "name": "segment_005.mp4",
-            "played": 120
+            "played": 122
         },
         "6": {
             "name": "segment_006.mp4",
-            "played": 120
+            "played": 121
         },
         "7": {
             "name": "segment_007.mp4",
@@ -92,7 +92,7 @@
         },
         "8": {
             "name": "segment_008.mp4",
-            "played": 118
+            "played": 119
         },
         "9": {
             "name": "segment_009.mp4",
@@ -104,13 +104,13 @@
             "alias": "\u30a4\u5370\u30ab",
             "length": 194,
             "name": "again",
-            "played": 53
+            "played": 56
         },
         "10": {
             "alias": "\u308a\u30cf\u5869",
             "length": 138,
             "name": "gift-vip",
-            "played": 47
+            "played": 48
         },
         "11": {
             "alias": "\u309f\u56e0\u755d",
@@ -122,7 +122,7 @@
             "alias": "\u30b3\u5f15\u82b1",
             "length": 198,
             "name": "gone",
-            "played": 50
+            "played": 51
         },
         "13": {
             "alias": "\u4f55\u6deb\u3075",
@@ -164,7 +164,7 @@
             "alias": "\u306e\u30ba\u30bf",
             "length": 131,
             "name": "hugo",
-            "played": 48
+            "played": 49
         },
         "2": {
             "alias": "\u305e\u30e9\u6f14",
@@ -182,7 +182,7 @@
             "alias": "\u30ab\u306a\u4e59",
             "length": 143,
             "name": "kana",
-            "played": 48
+            "played": 49
         },
         "22": {
             "alias": "\u30bd\u30aa\u30a1",
@@ -194,7 +194,7 @@
             "alias": "\u30ff\u3043\u30f0",
             "length": 142,
             "name": "kill",
-            "played": 49
+            "played": 51
         },
         "24": {
             "alias": "\u30af\u84b8\u5c4b",
@@ -212,31 +212,31 @@
             "alias": "\u3072\u30ce\u3086",
             "length": 138,
             "name": "lost-vip",
-            "played": 47
+            "played": 48
         },
         "27": {
             "alias": "\u30ef\u3082\u307e",
             "length": 152,
             "name": "lost",
-            "played": 48
+            "played": 49
         },
         "28": {
             "alias": "\u3057\u306e\u304c",
             "length": 194,
             "name": "man-vip",
-            "played": 49
+            "played": 50
         },
         "29": {
             "alias": "\u8b01\u307a\u30af",
             "length": 227,
             "name": "man",
-            "played": 46
+            "played": 48
         },
         "3": {
             "alias": "\u30b4\u30a9\u98f2",
             "length": 195,
             "name": "aran",
-            "played": 51
+            "played": 52
         },
         "30": {
             "alias": "\u62bc\u8863\u65fa",
@@ -302,7 +302,7 @@
             "alias": "\u30e9\u3085\u30e4",
             "length": 140,
             "name": "back",
-            "played": 51
+            "played": 52
         },
         "40": {
             "alias": "\u56f2\u885b\u304f",
@@ -320,7 +320,7 @@
             "alias": "\u7d2b\u83c0 ",
             "length": 209,
             "name": "shion",
-            "played": 50
+            "played": 51
         },
         "43": {
             "alias": "\u771f\u610f\u3064",
@@ -338,7 +338,7 @@
             "alias": "\u59fb\u30a4\u30e1",
             "length": 193,
             "name": "taiyo",
-            "played": 50
+            "played": 51
         },
         "46": {
             "alias": "\u6c5a\u3070\u307c",
@@ -380,7 +380,7 @@
             "alias": "\u8276\u51f9\u30d7",
             "length": 121,
             "name": "war-vip",
-            "played": 51
+            "played": 52
         },
         "52": {
             "alias": "\u4ee5\u30fc\u3076",
@@ -392,7 +392,7 @@
             "alias": "\u30e2\u6e29\u307e",
             "length": 194,
             "name": "west-vip",
-            "played": 47
+            "played": 48
         },
         "54": {
             "alias": "\u3095\u6cf3\u6613",
@@ -404,13 +404,13 @@
             "alias": "\u306e\u95b2\u96e8",
             "length": 246,
             "name": "dead-vip",
-            "played": 48
+            "played": 50
         },
         "56": {
             "alias": "\u6620\u30db\u3078",
             "length": 247,
             "name": "dead-vip-bass-boosted",
-            "played": 49
+            "played": 50
         },
         "57": {
             "alias": "\u30b9\u30ae\u3080",
@@ -422,13 +422,13 @@
             "alias": "\u3042\u61b6\u61b6",
             "length": 289,
             "name": "blue",
-            "played": 48
+            "played": 52
         },
         "7": {
             "alias": "\u306c\u30ba\u533b",
             "length": 217,
             "name": "boys",
-            "played": 49
+            "played": 50
         },
         "8": {
             "alias": "\u5727\u4ee3\u63f4",

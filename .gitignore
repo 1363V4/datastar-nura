@@ -16,3 +16,4 @@ wheels/
 # data.json
 .env
 *.log
+data.json

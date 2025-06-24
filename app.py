@@ -40,9 +40,9 @@ async def main_view(current):
     return f'''
     <main 
     id="main"
-    data-signals="{{rem: {mp3_length - mp3_delay}, next_start: {next_start}}}"
+    data-signals="{{rem: {mp3_length - mp3_delay} }}"
     data-signals__ifmissing="{{vol: 2, play:0, expand:1}}"
-    data-on-interval="$rem--; if (Date.now() > {next_start} * 1000) {{ @get('/main'); }}"
+    data-on-interval="$rem--; if (Date.now() > {next_start} * 1000) {{ @get('/next'); }}"
     >
         <audio 
         data-ref="audio" 
@@ -136,21 +136,30 @@ async def index():
 
 @app.get('/main')
 async def main():
-    @stream_with_context
-    async def event():
-        current = current_table.get(doc_id=1)
-        html = await main_view(current)
-        yield SSE.merge_fragments(html)
-        yield SSE.execute_script("document.querySelector('video').load()")
-        if session['playing']:
-            yield SSE.execute_script("document.querySelector('audio').play()")
-            yield SSE.merge_signals({'play': 1})
-    return DatastarResponse(event())
+    session['playing'] = 0
+    current = current_table.get(doc_id=1)
+    html = await main_view(current)
+    return DatastarResponse(SSE.merge_fragments(html))
+
+@app.get('/next')
+async def next():
+    current = current_table.get(doc_id=1)
+    html = await main_view(current)
+    events = [
+        SSE.merge_fragments(html),
+        SSE.execute_script("document.querySelector('video').load()")
+    ]
+    if session['playing']:
+        events += [
+            SSE.execute_script("document.querySelector('audio').play()"),
+            SSE.merge_signals({'play': 1})
+        ]
+    return DatastarResponse(events)
 
 @app.post('/play')
 async def play():
     session['playing'] = not session['playing']
-    return await main()
+    return await next()
 
 # if __name__ == '__main__':
 #     app.run(debug=True)

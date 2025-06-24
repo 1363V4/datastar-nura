@@ -41,3 +41,9 @@ You can also change the behavior back to default when they stop playing.
 
 The resource usage is more sending data when the user is not interacting and connection hanging around hogging server resources. So I'd probably have it as a separate connection than your view updates.
 The defaults aggressive connection pruning makes a big difference for cpu/mem/network when you have a lot of concurrent users.
+
+
+quand on reload ça chibre un peu
+routes différentes ?
+quand tu reload, reset playing session à 0
+okok ça marche pas mal
